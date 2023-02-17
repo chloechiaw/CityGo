@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { render } from "react-dom";
+import Map, { Marker, Popup } from "react-map-gl";
 
-function App() {
+import "mapbox-gl/dist/mapbox-gl.css";
+
+const MAPBOX_TOKEN =
+  "pk.eyJ1IjoiY2hsb2VjaGlhIiwiYSI6ImNsYnN3cGkwbjBhMDIzcm1waGx4OXlkdTcifQ.ZICh0q_fzJsvi3G1teTsKA"; // Set your mapbox token here
+
+export default function Root() {
+  const { showPopup, setShowPopup } = React.useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Map
+      initialViewState={{
+        latitude: 37.8,
+        longitude: -122.4,
+        zoom: 14,
+      }}
+      style={{ width: 800, height: 600 }}
+      mapStyle="mapbox://styles/mapbox/navigation-day-v1"
+      mapboxAccessToken={MAPBOX_TOKEN}
+    >
+      {showPopup && (
+        <Popup
+          longitude={-122.4}
+          latitude={37.8}
+          anchor="bottom"
+          onClose={() => setShowPopup(false)}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          You are here
+        </Popup>
+      )}
+      <Marker longitude={-122.4} latitude={37.8} color="red" />
+    </Map>
   );
 }
 
-export default App;
+render(<Root />, document.body.appendChild(document.createElement("div")));
