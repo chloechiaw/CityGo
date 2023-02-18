@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Prompt } from "./prompt.js";
 import { useState, useEffect, useMemo } from "react";
 import { v4 } from "uuid";
 import MapView from "./MapView";
@@ -9,6 +10,8 @@ import SideMenu from "./SideMenu";
 export default function App() {
   const [locations, setLocations] = useState([]);
   const [popupInfo, setPopupInfo] = useState(null);
+
+  const [modelOutput, setModelOutput] = useState("");
 
   useEffect(() => {
     fetch("data.json", {
@@ -32,12 +35,14 @@ export default function App() {
   // create a separate json data with the longitude and latitude of eac
   return (
     <div>
-      <Button />‍
-      {locations.map((place) => (
-          <div key={v4()}>
-            <p>{place.Address}</p>
-          </div>
-        ))}
+      <p>{modelOutput}</p>
+      {locations.map((location) => (
+        <div key={v4()}>
+          <p>Written by {location.Title}</p>
+          <Prompt place={location} setModelOutput={setModelOutput} />
+        </div>
+      ))}
+      <Button />
       <MapView />
       <SideMenu />
     </div>
