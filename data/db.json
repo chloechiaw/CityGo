@@ -1,0 +1,154 @@
+{
+  "locations": [
+  {
+    "Title": "Painted Ladies",
+    "Latitude": 37.7762528,
+    "Longitude": -122.4327556
+  },
+  {
+    "Title": "Dolores Park",
+    "Latitude": 37.7597704,
+    "Longitude": -122.4271145
+  },
+  {
+    "Title": "Salesforce Tower",
+    "Latitude": 37.7897442,
+    "Longitude": -122.3972337
+  },
+  {
+    "Title": "Pier 39",
+    "Latitude": 37.808673,
+    "Longitude": -122.409821
+  },
+  {
+    "Title": "83 Marina Green Dr San Francisco, CA 94123 United States",
+    "Latitude": 37.8066298,
+    "Longitude": -122.4480145
+  },
+  {
+    "Title": "750 Howard St",
+    "Latitude": 37.7847527,
+    "Longitude": -122.4024813
+  },
+  {
+    "Title": "2905 Hyde St San Francisco, CA 94109 United States",
+    "Latitude": 37.8077978,
+    "Longitude": -122.4209106
+  },
+  {
+    "Title": "Alamo Square",
+    "Latitude": 37.7754224,
+    "Longitude": -122.4345097
+  },
+  {
+    "Title": "335 McAllister St",
+    "Latitude": 37.7795107,
+    "Longitude": -122.4176677
+  },
+  {
+    "Title": "Powell St",
+    "Latitude": 37.796504,
+    "Longitude": -122.4100932
+  },
+  {
+    "Title": "865 Market St",
+    "Latitude": 37.7843457,
+    "Longitude": -122.4065303
+  },
+  {
+    "Title": "Haight St",
+    "Latitude": 37.7710202,
+    "Longitude": -122.4391165
+  },
+  {
+    "Title": "Valencia St",
+    "Latitude": 37.7590813,
+    "Longitude": -122.4213514
+  },
+  {
+    "Title": "Embarcadero",
+    "Latitude": 37.7992627,
+    "Longitude": -122.3976732
+  },
+  {
+    "Title": "Howard St",
+    "Latitude": 37.7817587,
+    "Longitude": -122.4046395
+  },
+  {
+    "Title": "Park Presidio Blvd",
+    "Latitude": 37.7724371,
+    "Longitude": -122.4757098
+  },
+  {
+    "Title": "19th Avenue",
+    "Latitude": 37.7505174,
+    "Longitude": -122.4761259
+  },
+  {
+    "Title": "Bay Shore Blvd",
+    "Latitude": 27.8865876,
+    "Longitude": -82.4857326
+  },
+  {
+    "Title": "24th St",
+    "Latitude": 42.9592061,
+    "Longitude": -82.4519942
+  },
+  {
+    "Title": "Goughh St",
+    "Latitude": 37.7876068,
+    "Longitude": -122.4251853
+  },
+  {
+    "Title": "Chestnut St",
+    "Latitude": 39.9609451,
+    "Longitude": -75.2649467
+  },
+  {
+    "Title": "24th St",
+    "Latitude": 42.9592061,
+    "Longitude": -82.4519942
+  },
+  {
+    "Title": "Clement St",
+    "Latitude": 37.7821248,
+    "Longitude": -122.4827444
+  },
+  {
+    "Title": "1849 Geary Blvd",
+    "Latitude": 37.7839107,
+    "Longitude": -122.4335415
+  },
+  {
+    "Title": "2222 Broadwway",
+    "Latitude": 37.7946572,
+    "Longitude": -122.4342936
+  },
+  {
+    "Title": "Grant Avenue",
+    "Latitude": 37.1860502,
+    "Longitude": -93.2996263
+  },
+  {
+    "Title": "Divisadero St",
+    "Latitude": 37.7753694,
+    "Longitude": -122.4378506
+  },
+  {
+    "Title": "255 Columbus Ave",
+    "Latitude": "37.797577,",
+    "Longitude": 122.40653
+  },
+  {
+    "Title": "242 O’Farrell St.",
+    "Latitude": 37.7864953,
+    "Longitude": -122.4087511
+  },
+  {
+    "Title": "Filmore St.",
+    "Latitude": 37.7989672,
+    "Longitude": -122.4358938
+  }
+]
+}
