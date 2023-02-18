@@ -1,15 +1,9 @@
 import * as React from "react";
+import { Prompt } from "./prompt.js";
 import { useState, useEffect, useMemo } from "react";
 import { v4 } from "uuid";
 import { render } from "react-dom";
-import Map, {
-  Marker,
-  Popup,
-  NavigationControl,
-  FullscreenControl,
-  ScaleControl,
-  GeolocateControl,
-} from "react-map-gl";
+import Map, { Marker, Popup } from "react-map-gl";
 
 // add an id to the map and the popup. if the (conditions) matches then the popup shows up.
 const TOKEN =
@@ -18,6 +12,8 @@ const TOKEN =
 export default function App() {
   const [locations, setLocations] = useState([]);
   const [popupInfo, setPopupInfo] = useState(null);
+
+  const [modelOutput, setModelOutput] = useState("");
 
   useEffect(() => {
     fetch(" http://localhost:8000/locations")
@@ -36,10 +32,12 @@ export default function App() {
   // create a separate json data with the longitude and latitude of eac
   return (
     <>
+      <p>{modelOutput}</p>
       <div>
         {locations.map((location) => (
           <div key={v4()}>
             <p>Written by {location.Title}</p>
+            <Prompt place={location} setModelOutput={setModelOutput} />
           </div>
         ))}
       </div>
