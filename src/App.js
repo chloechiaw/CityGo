@@ -11,12 +11,17 @@ export default function App() {
   const [popupInfo, setPopupInfo] = useState(null);
 
   useEffect(() => {
-    fetch(" http://localhost:8000/locations")
+    fetch("data.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
       .then((res) => {
         return res.json();
       })
-      .then((data) => {
-        setLocations(data);
+      .then((locations) => {
+        setLocations(locations.locations);
       });
   }, []);
 
@@ -27,12 +32,12 @@ export default function App() {
   // create a separate json data with the longitude and latitude of eac
   return (
     <div>
-      {/* {locations.map((location) => (
+      <Button />‍
+      {locations.map((place) => (
           <div key={v4()}>
-            <p>Written by {location.Title}</p>
+            <p>{place.Address}</p>
           </div>
-        ))} */}
-      <Button />
+        ))}
       <MapView />
       <SideMenu />
     </div>
