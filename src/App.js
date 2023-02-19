@@ -19,9 +19,8 @@ export default function App() {
     suggestions: "",
     latitude: 0, //37.7857
     longitude: 0, //122.4011
+    walkScore: 0,
   });
-  const [items, setItems] = useState(null);
-  const [error, setError] = useState(null);
   const [modelOutput, setModelOutput] = useState("");
 
   useEffect(() => {
@@ -40,22 +39,6 @@ export default function App() {
       });
   }, []);
 
-  function getWalkscoreData(location) {
-    fetch(
-      `"https://stmhall.ca/walkscore.php?addr=${
-        location.Title + location.Address
-      }"`
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setItems(result);
-        },
-        (error) => {
-          setError(error);
-        }
-      );
-  }
 
   return (
     <div className="flex flex-col items-center">
@@ -72,7 +55,6 @@ export default function App() {
               locations={locations}
             />
           </div>
-
           <div className="col-span-1">
             <SideMenu
               className="w-300 h-64 align"
@@ -81,6 +63,7 @@ export default function App() {
               suggestions={displaySideMenu.suggestions}
               latitude={displaySideMenu.latitude}
               longitude={displaySideMenu.longitude}
+              walkScore={displaySideMenu.walkScore}
             ></SideMenu>
           </div>
         </div>

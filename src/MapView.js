@@ -5,19 +5,35 @@ import Map, { Marker, Popup } from "react-map-gl";
 function MapView({ setDisplaySideMenu, locations }) {
   const TOKEN =
     "pk.eyJ1IjoiY2hsb2VjaGlhIiwiYSI6ImNsYnN3cGkwbjBhMDIzcm1waGx4OXlkdTcifQ.ZICh0q_fzJsvi3G1teTsKA"; // Set your mapbox token here
+    const [item, setItem] = useState(null);
+
   const [showSideBar, setShowSideBar] = useState(null);
   const [popupInfo, setPopupInfo] = useState(null);
 
+  // Sample URL
+  function getWalkScore(location){
+    var nameCleaned = location.Address.replace(/\s/g, '%20')
+      fetch(`https://stmhall.ca/walkscore.php?addr=${nameCleaned}`)
+         .then((res) => res.json())
+         .then((data) => {
+            setItem(data.walkScore);
+            return data.walkScore
+         })
+         .catch((err) => {
+           console.log('err.message');
+            console.log(err.message);
+         });
+  }
+
   function onClick(location) {
-      console.log('location')
-      console.log(location)
-    setPopupInfo(location);
+    getWalkScore(location)
     setDisplaySideMenu({
       Title: location.Title,
       description: "Description",
       suggestions: "Suggestions",
       latitude: location.Latitude,
-      longitude: location.Longitude
+      longitude: location.Longitude,
+      walkScore: item,
     });
   }
 
