@@ -20,43 +20,21 @@ const sideMenuOverlay = {
   padding: 10,
 };
 
-function SideMenu ({ title, description, suggestions }) {
-    return (
-      <div className="w-60 h-full shadow-md bg-white px-1">
-        <ul className="relative">
-          <li className="relative">
-            <a
-              className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
-              href="#!"
-              data-mdb-ripple="true"
-              data-mdb-ripple-color="dark"
-            >
-              {title}
-            </a>
-          </li>
-          <li className="relative">
-            <a
-              className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
-              href="#!"
-              data-mdb-ripple="true"
-              data-mdb-ripple-color="dark"
-            >
-              {description}
-            </a>
-          </li>
-          <li className="relative">
-            <a
-              className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
-              href="#!"
-              data-mdb-ripple="true"
-              data-mdb-ripple-color="dark"
-            >
-              {suggestions}
-            </a>
-          </li>
-        </ul>
-      </div>
-    );
-  }
+function SideMenu({ title, description, suggestions }) {
+  return (
+    <div className="ml-4 flex flex-col w-1/4">
+      <h1 className="font-lg font-thick mb-5">{title}</h1>
+      <p className="underline md:underline-offset-400">
+        Google Panoramic Street View
+      </p>
+
+      <h2 className="mb-5">{description}</h2>
+      <button className="inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+        Suggest how to make this a more walkable place.
+      </button>
+      <h3>{suggestions}</h3>
+    </div>
+  );
+}
 
 export default SideMenu;

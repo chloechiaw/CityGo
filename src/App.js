@@ -9,7 +9,11 @@ import SideMenu from "./SideMenu";
 
 export default function App() {
   const [locations, setLocations] = useState([]);
-  const [displaySideMenu, setDisplaySideMenu] = useState({Title: "No area selected", description: "", suggestions: ""});
+  const [displaySideMenu, setDisplaySideMenu] = useState({
+    Title: "No area selected",
+    description: "",
+    suggestions: "",
+  });
   const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
 
@@ -26,13 +30,10 @@ export default function App() {
         return res.json();
       })
       .then((locations) => {
-        console.log(locations)
+        console.log(locations);
         setLocations(locations.locations);
       });
   }, []);
-  function Button() {
-    return <button>Button</button>;
-  }
 
   function getWalkscoreData(location) {
     fetch(
@@ -53,15 +54,18 @@ export default function App() {
 
   // numbers.forEach(number => console.log(number));
 
-//   const array1 = ['a', 'b', 'c'];
+  //   const array1 = ['a', 'b', 'c'];
 
-// array1.forEach(element => console.log(element));
+  // array1.forEach(element => console.log(element));
   return (
-    <div>
+    <div className="flex">
       <p>{modelOutput}</p>
-      <MapView setDisplaySideMenu={setDisplaySideMenu} locations={locations} /> 
-      <Button />
-      <SideMenu title={displaySideMenu.Title} description={displaySideMenu.description} suggestions={displaySideMenu.suggestions}></SideMenu>
+      <MapView setDisplaySideMenu={setDisplaySideMenu} locations={locations} />
+      <SideMenu
+        title={displaySideMenu.Title}
+        description={displaySideMenu.description}
+        suggestions={displaySideMenu.suggestions}
+      ></SideMenu>
     </div>
   );
 }
