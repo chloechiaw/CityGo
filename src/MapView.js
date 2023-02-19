@@ -19,7 +19,6 @@ function MapView({ setDisplaySideMenu, locations }) {
 
   return (
     <Map
-      className="flex w-3/4"
       initialViewState={{
         latitude: 37.8,
         longitude: -122.4,
@@ -27,7 +26,7 @@ function MapView({ setDisplaySideMenu, locations }) {
         bearing: 0,
         pitch: 0,
       }}
-      style={{ width: 800, height: 600, zIndex: 0 }}
+      style={{ width: 600, height: 600, zIndex: 0 }}
       mapStyle="mapbox://styles/chloechia/cle7t9mqa000a01pgt1v4w61o"
       mapboxAccessToken={TOKEN}
     >

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Header } from "./Header";
 import { Prompt } from "./prompt.js";
 import { useState, useEffect, useMemo } from "react";
 import { v4 } from "uuid";
@@ -58,14 +59,31 @@ export default function App() {
 
   // array1.forEach(element => console.log(element));
   return (
-    <div className="flex">
+    <div className="flex flex-col items-center">
+      <div className="w-full bg-gray-800 h-16 flex items-center ">
+        <Header />
+      </div>
       <p>{modelOutput}</p>
-      <MapView setDisplaySideMenu={setDisplaySideMenu} locations={locations} />
-      <SideMenu
-        title={displaySideMenu.Title}
-        description={displaySideMenu.description}
-        suggestions={displaySideMenu.suggestions}
-      ></SideMenu>
+      <div>
+        <div className="mt-10 w-full grid grid-cols-2 gap-2 p-4">
+          <div>
+            <MapView
+              className="w-300 h-64 mt-10 col-span-2"
+              setDisplaySideMenu={setDisplaySideMenu}
+              locations={locations}
+            />
+          </div>
+
+          <div className="col-span-1">
+            <SideMenu
+              className="w-300 h-64 align"
+              title={displaySideMenu.Title}
+              description={displaySideMenu.description}
+              suggestions={displaySideMenu.suggestions}
+            ></SideMenu>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

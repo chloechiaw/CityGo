@@ -10,7 +10,9 @@ export function Prompt(props) {
 
   return (
     <div>
-      <button onClick={onClick}>Give me suggestions</button>
+      <button onClick={onClick}>
+        Suggest how to make this a more walkable place.
+      </button>
     </div>
   );
 }
