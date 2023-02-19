@@ -5,6 +5,10 @@ import { useState, useEffect, useMemo } from "react";
 import { v4 } from "uuid";
 import MapView from "./MapView";
 import SideMenu from "./SideMenu";
+import StreetView from "./StreetView";
+import { LoadScript } from "@react-google-maps/api";
+
+
 
 // add an id to the map and the popup. if the (conditions) matches then the popup shows up.
 
@@ -14,10 +18,13 @@ export default function App() {
     Title: "No area selected",
     description: "",
     suggestions: "",
+    latitude: 0, //37.7857
+    longitude: 0, //122.4011
   });
   const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
-
+  const lib = ["places"];
+  const key = "AIzaSyAZgZEKZ6djLHvWI9g5qkQGdDbInfSJ0nE";
   const [modelOutput, setModelOutput] = useState("");
 
   useEffect(() => {
@@ -53,11 +60,6 @@ export default function App() {
       );
   }
 
-  // numbers.forEach(number => console.log(number));
-
-  //   const array1 = ['a', 'b', 'c'];
-
-  // array1.forEach(element => console.log(element));
   return (
     <div className="flex flex-col items-center">
       <div className="w-full bg-gray-800 h-16 flex items-center ">
@@ -80,6 +82,8 @@ export default function App() {
               title={displaySideMenu.Title}
               description={displaySideMenu.description}
               suggestions={displaySideMenu.suggestions}
+              latitude={displaySideMenu.latitude}
+              longitude={displaySideMenu.longitude}
             ></SideMenu>
           </div>
         </div>
@@ -87,3 +91,9 @@ export default function App() {
     </div>
   );
 }
+
+
+      
+
+
+       
