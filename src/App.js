@@ -4,6 +4,9 @@ import { useState, useEffect, useMemo } from "react";
 import { v4 } from "uuid";
 import MapView from "./MapView";
 import SideMenu from "./SideMenu";
+import StreetView from "./StreetView";
+import { LoadScript } from "@react-google-maps/api";
+
 
 
 // add an id to the map and the popup. if the (conditions) matches then the popup shows up.
@@ -14,10 +17,13 @@ export default function App() {
     Title: "No area selected",
     description: "",
     suggestions: "",
+    latitude: 0,
+    longitude: 0,
   });
   const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
-  
+  const lib = ["places"];
+  const key = "AIzaSyAZgZEKZ6djLHvWI9g5qkQGdDbInfSJ0nE";
   const [modelOutput, setModelOutput] = useState("");
 
   useEffect(() => {
@@ -55,12 +61,17 @@ export default function App() {
 
   return (
     <div>
-      <MapView setDisplaySideMenu={setDisplaySideMenu} locations={locations}/>
+      <LoadScript googleMapsApiKey={key} libraries={lib}>
+        <StreetView lat={37.7857} lng={122.4011}/>
+      </LoadScript>
+      {/* <MapView setDisplaySideMenu={setDisplaySideMenu} locations={locations}/>
       <SideMenu
         title={displaySideMenu.Title}
         description={displaySideMenu.description}
         suggestions={displaySideMenu.suggestions}
-      />
+        latitude={displaySideMenu.latitude}
+        longitude={displaySideMenu.longitude}
+      /> */}
     </div>
   );
 }
