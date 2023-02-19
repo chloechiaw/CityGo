@@ -61,18 +61,14 @@ export default function App() {
 
   return (
     <div>
-      <p>PLS RENDER</p>
       <LoadScript googleMapsApiKey={key} libraries={lib}>
-        <StreetView />
+        <StreetView lat={37.7857} lng={122.4011}/>
       </LoadScript>
-      {/* <StreetView address="2362 Berkshire Lane, North Brunswick, NJ" APIkey="AIzaSyA4bN_JLbgMsrsaspEm1ebHDiTNNvE7DTA" streetView zoomLevel={15}/> */}
-      {/* <MapView setDisplaySideMenu={setDisplaySideMenu} locations={locations} />
-      <Button />
       <SideMenu
         title={displaySideMenu.Title}
         description={displaySideMenu.description}
         suggestions={displaySideMenu.suggestions}
-      ></SideMenu>{" "} */}
+      ></SideMenu>
     </div>
   );
 }
