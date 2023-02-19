@@ -11,6 +11,7 @@ export function SideMenu({
   latitude,
   longitude,
   walkScore,
+  setModelOutput,
 }) {
   const lib = ["places"];
   const key = "AIzaSyAZgZEKZ6djLHvWI9g5qkQGdDbInfSJ0nE";
@@ -39,11 +40,10 @@ export function SideMenu({
       </LoadScript>
 
       <br></br>
-      <Prompt />
+      <Prompt title={title} setModelOutput={setModelOutput} />
       <br></br>
-      <button className="w-120 h-50 inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-        (Returns Image) Show a walkable version of this place.
-      </button>
+
+      <p>Suggestions</p>
       <h3>{suggestions}</h3>
     </div>
   );
