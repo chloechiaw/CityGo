@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Header } from "./Header";
+import { Header } from "./header";
 import { Prompt } from "./prompt.js";
 import { useState, useEffect, useMemo } from "react";
 import { v4 } from "uuid";
@@ -9,7 +9,6 @@ import StreetView from "./StreetView";
 import { LoadScript } from "@react-google-maps/api";
 
 // add an id to the map and the popup. if the (conditions) matches then the popup shows up.
-
 export default function App() {
   const [locations, setLocations] = useState([]);
   const [displaySideMenu, setDisplaySideMenu] = useState({
@@ -19,10 +18,6 @@ export default function App() {
     longitude: 0, //122.4011
     walkscore: 0,
   });
-  const [items, setItems] = useState(null);
-  const [error, setError] = useState(null);
-  const lib = ["places"];
-  const key = "AIzaSyAZgZEKZ6djLHvWI9g5qkQGdDbInfSJ0nE";
   const [modelOutput, setModelOutput] = useState("");
 
   useEffect(() => {
@@ -59,7 +54,6 @@ export default function App() {
               locations={locations}
             />
           </div>
-
           <div className="col-span-1">
             <SideMenu
               className="w-300 h-64 align"

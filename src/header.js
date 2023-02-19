@@ -1,21 +1,10 @@
 import * as React from "react";
-import { Prompt } from "./prompt.js";
-import { useState, useEffect, useMemo } from "react";
-import { v4 } from "uuid";
-import MapView from "./MapView";
-import SideMenu from "./SideMenu";
 
 import { Fragment } from "react";
 import {
   ShieldCheckIcon,
   CameraIcon,
-  CalendarIcon,
-  CheckIcon,
   ChevronDownIcon,
-  CurrencyDollarIcon,
-  LinkIcon,
-  MapPinIcon,
-  PencilIcon,
 } from "@heroicons/react/20/solid";
 import { Menu, Transition } from "@headlessui/react";
 
