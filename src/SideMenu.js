@@ -20,14 +20,9 @@ const sideMenuOverlay = {
   padding: 10,
 };
 
-const title = "Museum";
-const description = "nice";
-const suggestions = "make it better duh";
-
-class SideMenu extends Component {
-  render() {
+function SideMenu ({ title, description, suggestions }) {
     return (
-      <div className="w-60 h-full shadow-md bg-white px-1 absolute">
+      <div className="w-60 h-full shadow-md bg-white px-1">
         <ul className="relative">
           <li className="relative">
             <a
@@ -63,6 +58,5 @@ class SideMenu extends Component {
       </div>
     );
   }
-}
 
 export default SideMenu;

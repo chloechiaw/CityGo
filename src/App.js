@@ -9,7 +9,9 @@ import SideMenu from "./SideMenu";
 
 export default function App() {
   const [locations, setLocations] = useState([]);
-  const [popupInfo, setPopupInfo] = useState(null);
+  const [displaySideMenu, setDisplaySideMenu] = useState({Title: "No area selected", description: "", suggestions: ""});
+  const [items, setItems] = useState(null);
+  const [error, setError] = useState(null);
 
   const [modelOutput, setModelOutput] = useState("");
 
@@ -24,27 +26,42 @@ export default function App() {
         return res.json();
       })
       .then((locations) => {
+        console.log(locations)
         setLocations(locations.locations);
       });
   }, []);
-
   function Button() {
     return <button>Button</button>;
   }
 
-  // create a separate json data with the longitude and latitude of eac
+  function getWalkscoreData(location) {
+    fetch(
+      `"https://stmhall.ca/walkscore.php?addr=${
+        location.Title + location.Address
+      }"`
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setItems(result);
+        },
+        (error) => {
+          setError(error);
+        }
+      );
+  }
+
+  // numbers.forEach(number => console.log(number));
+
+//   const array1 = ['a', 'b', 'c'];
+
+// array1.forEach(element => console.log(element));
   return (
     <div>
       <p>{modelOutput}</p>
-      {locations.map((location) => (
-        <div key={v4()}>
-          <p>Written by {location.Title}</p>
-          <Prompt place={location} setModelOutput={setModelOutput} />
-        </div>
-      ))}
+      <MapView setDisplaySideMenu={setDisplaySideMenu} locations={locations} /> 
       <Button />
-      <MapView />
-      <SideMenu />
+      <SideMenu title={displaySideMenu.Title} description={displaySideMenu.description} suggestions={displaySideMenu.suggestions}></SideMenu>
     </div>
   );
 }

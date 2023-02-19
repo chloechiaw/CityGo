@@ -127,12 +127,6 @@
     "Longitude": -75.2649467
   },
   {
-    "Title": "24th St",
-    "Address": "24th St San Francisco, CA",
-    "Latitude": 42.9592061,
-    "Longitude": -82.4519942
-  },
-  {
     "Title": "Clement St",
     "Address": "Clement St San Francisco, CA",
     "Latitude": 37.7821248,
@@ -165,7 +159,7 @@
   {
     "Title": "255 Columbus Ave",
     "Addresss": "255 Columbus Ave San Francisco, CA",
-    "Latitude": "37.797577,",
+    "Latitude": 37.797577,
     "Longitude": 122.40653
   },
   {
