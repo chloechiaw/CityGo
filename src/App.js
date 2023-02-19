@@ -4,11 +4,9 @@ import { Prompt } from "./prompt.js";
 import { useState, useEffect, useMemo } from "react";
 import { v4 } from "uuid";
 import MapView from "./MapView";
-import SideMenu from "./SideMenu";
+import { SideMenu } from "./SideMenu";
 import StreetView from "./StreetView";
 import { LoadScript } from "@react-google-maps/api";
-
-
 
 // add an id to the map and the popup. if the (conditions) matches then the popup shows up.
 
@@ -16,10 +14,10 @@ export default function App() {
   const [locations, setLocations] = useState([]);
   const [displaySideMenu, setDisplaySideMenu] = useState({
     Title: "No area selected",
-    description: "",
     suggestions: "",
     latitude: 0, //37.7857
     longitude: 0, //122.4011
+    walkscore: 0,
   });
   const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
@@ -43,34 +41,20 @@ export default function App() {
       });
   }, []);
 
-  function getWalkscoreData(location) {
-    fetch(
-      `"https://stmhall.ca/walkscore.php?addr=${
-        location.Title + location.Address
-      }"`
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setItems(result);
-        },
-        (error) => {
-          setError(error);
-        }
-      );
-  }
-
   return (
-    <div className="flex flex-col items-center">
-      <div className="w-full bg-gray-800 h-16 flex items-center ">
+    <div className="mx-10 bg-gray-100 flex flex-col items-center">
+      <div className=" w-full bg-gray-100 h-16 flex items-center ">
         <Header />
       </div>
       <p>{modelOutput}</p>
       <div>
-        <div className="mt-10 w-full grid grid-cols-2 gap-2 p-4">
-          <div>
+        {/* here */}
+        <div className="mt-20 w-full grid grid-cols-2 gap-2 p-4">
+          <div className="mt-20">
+            <h2 className="font-bold"> First ... click on any marker </h2>
+            <br></br>
             <MapView
-              className="w-300 h-64 mt-10 col-span-2"
+              className="border-4 w-300 h-64 mt-10 col-span-2"
               setDisplaySideMenu={setDisplaySideMenu}
               locations={locations}
             />
@@ -80,10 +64,10 @@ export default function App() {
             <SideMenu
               className="w-300 h-64 align"
               title={displaySideMenu.Title}
-              description={displaySideMenu.description}
               suggestions={displaySideMenu.suggestions}
               latitude={displaySideMenu.latitude}
               longitude={displaySideMenu.longitude}
+              walkScore={displaySideMenu.walkScore}
             ></SideMenu>
           </div>
         </div>
@@ -91,9 +75,3 @@ export default function App() {
     </div>
   );
 }
-
-
-      
-
-
-       

@@ -1,20 +1,24 @@
 import React from "react";
 import { GoogleMap, StreetViewPanorama } from "@react-google-maps/api";
 
-function StreetView({latitude, longitude}) {
-  const containerStyle = {
+function StreetView({ latitude, longitude }) {
+  const streetViewContainerStyle = {
     height: "400px",
-    width: "800px"
+    width: "700px",
   };
   const center = {
     lat: latitude,
-    lng: longitude
+    lng: longitude,
   };
   return (
-    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
+    <GoogleMap
+      mapContainerStyle={streetViewContainerStyle}
+      center={center}
+      zoom={10}
+    >
       <StreetViewPanorama
         id="street-view"
-        mapContainerStyle={containerStyle}
+        mapContainerStyle={streetViewContainerStyle}
         position={center}
         visible={true}
       />

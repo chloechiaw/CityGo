@@ -26,60 +26,58 @@ function classNames(...classes) {
 export function Header() {
   return (
     <div className="bg-gray-100 lg:flex lg:items-center lg:justify-between">
-      <div className="min-w-0 flex-1">
-        <h2 className="mt-10 text-2xl font-bold leading-7 text-black sm:text-3xl ">
-          Make Urban Streets Walkable!
+      <div className="mt-20 min-w-0 flex-1">
+        <h2 className="mx-3 mt-20 text-2xl font-bold leading-7 text-black sm:text-3xl ">
+          Transform an Unwalkable SF Street Instantly 🪄
         </h2>
-        <p className="text-black">
+
+        <p className="mx-3 text-black">
           This is a tool urban planners can use to identify the exact street
           venues where areas are{" "}
           <span class="underline text-indigo-600"> least walkable</span> for
-          pedestrians and gain direct suggestions on how to pedestrianize a
-          space. 📍 San Francisco
+          pedestrians, gain direct suggestions on how to pedestrianize the
+          space, and generate what a walkable version looks like!
         </p>
         <div className="mt-10 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
-          <div className="mt-2 flex items-center text-sm text-gray-500">
+          <div className="mx-3 mt-2 flex items-center text-sm text-gray-500">
             <ShieldCheckIcon
               className="mr-1.5 h-5 w-5 flex-shrink-0 text-indigo-600"
               aria-hidden="true"
             />
-            Click markers to reveal venue-specific information
+            Super-duper accurate location data
           </div>
           <div className="mt-2 flex items-center text-sm text-gray-500">
             <ShieldCheckIcon
               className="mr-1.5 h-5 w-5 flex-shrink-0 text-indigo-600"
               aria-hidden="true"
             />
-            See high foot traffic spots
+            See what huge urban fixes would look like instantly.
           </div>
           <div className="mt-2 flex items-center text-sm text-gray-500">
             <ShieldCheckIcon
               className="mr-1.5 h-5 w-5 flex-shrink-0 text-indigo-600"
               aria-hidden="true"
             />
-            Get Walkability Scores
-          </div>
-          <div className="mt-2 flex items-center text-sm text-gray-500">
-            <ShieldCheckIcon
-              className="mr-1.5 h-5 w-5 flex-shrink-0 text-indigo-600"
-              aria-hidden="true"
-            />
-            Closing on January 9, 2020
+            Make SF more walkable!
           </div>
         </div>
+        <p className="mt-4 mx-3">
+          1. Start by clicking any marker on the map. Each heat map represents
+          high foot traffic areas. 👣{" "}
+        </p>
+        <p className="mx-3">
+          2. See what the street looks like IRL using Google Maps street view. 🗺
+        </p>
+        <p className="mx-3">3. Generate location-specific fixes. 🫡 </p>
+        <p className="mx-3">
+          4. See what the location would look like instantly if it was improved.
+          🚶🏻‍♀️{" "}
+        </p>
       </div>
       <div className="mt-5 flex lg:mt-0 lg:ml-4">
         <span className=" hidden sm:block"></span>
 
-        <span className="sm:ml-3">
-          <button
-            type="button"
-            className="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-          >
-            <CameraIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-            Try Image Segmentation
-          </button>
-        </span>
+        <span className="sm:ml-3"></span>
 
         {/* Dropdown */}
         <Menu as="div" className="relative ml-3 sm:hidden">
