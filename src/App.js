@@ -14,6 +14,8 @@ export default function App() {
     Title: "No area selected",
     description: "",
     suggestions: "",
+    latitude: 0, //37.7857
+    longitude: 0, //122.4011
   });
   const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
@@ -60,6 +62,8 @@ export default function App() {
         title={displaySideMenu.Title}
         description={displaySideMenu.description}
         suggestions={displaySideMenu.suggestions}
+        latitude={displaySideMenu.latitude}
+        longitude={displaySideMenu.longitude}
       />
     </div>
   );
