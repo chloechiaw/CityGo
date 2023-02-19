@@ -15,8 +15,7 @@ function SideMenu({ title, description, suggestions, latitude, longitude }) {
         Google Panoramic Street View
       </p>
       <LoadScript googleMapsApiKey={key} libraries={lib}>
-        <StreetView latitude={37.7857} longitude={122.4011} />
-        {/* 37.7857 | 122.4011 */}
+        <StreetView latitude={latitude} longitude={longitude}/>
       </LoadScript>
       <h2 className="mb-5">{description}</h2>
       <button className="inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">

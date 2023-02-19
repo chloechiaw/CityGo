@@ -17,7 +17,7 @@ function MapView({ setDisplaySideMenu, locations }) {
       description: "Description",
       suggestions: "Suggestions",
       latitude: location.Latitude,
-      longitude: location.Longitude,
+      longitude: location.Longitude
     });
   }
 
