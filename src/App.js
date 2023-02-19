@@ -4,6 +4,9 @@ import { useState, useEffect, useMemo } from "react";
 import { v4 } from "uuid";
 import MapView from "./MapView";
 import SideMenu from "./SideMenu";
+import StreetView from "./StreetView";
+import { LoadScript } from "@react-google-maps/api";
+
 
 
 // add an id to the map and the popup. if the (conditions) matches then the popup shows up.
@@ -19,7 +22,8 @@ export default function App() {
   });
   const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
-  
+  const lib = ["places"];
+  const key = "AIzaSyAZgZEKZ6djLHvWI9g5qkQGdDbInfSJ0nE";
   const [modelOutput, setModelOutput] = useState("");
 
   useEffect(() => {

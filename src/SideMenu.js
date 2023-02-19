@@ -1,13 +1,14 @@
 // SideMenu.js
 import React, { Component } from "react";
 import { LoadScript } from "@react-google-maps/api";
-import StreetView from './StreetView'
-
+import StreetView from "./StreetView";
 
 function SideMenu({ title, description, suggestions, latitude, longitude }) {
   const lib = ["places"];
   const key = "AIzaSyAZgZEKZ6djLHvWI9g5qkQGdDbInfSJ0nE";
+  console.log(latitude, longitude)
   return (
+    
     <div className="ml-4 flex flex-col w-1/4">
       <h1 className="font-lg font-thick mb-5">{title}</h1>
       <p className="underline md:underline-offset-400">

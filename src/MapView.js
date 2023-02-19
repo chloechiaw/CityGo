@@ -9,6 +9,8 @@ function MapView({ setDisplaySideMenu, locations }) {
   const [popupInfo, setPopupInfo] = useState(null);
 
   function onClick(location) {
+      console.log('location')
+      console.log(location)
     setPopupInfo(location);
     setDisplaySideMenu({
       Title: location.Title,
