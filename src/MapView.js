@@ -25,6 +25,7 @@ function MapView({ setDisplaySideMenu, locations }) {
 
   function onClick(location) {
     getWalkScore(location);
+    console.log(item);
     setDisplaySideMenu({
       Title: location.Title,
       description: "Description",
