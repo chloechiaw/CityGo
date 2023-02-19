@@ -1,28 +1,13 @@
 // SideMenu.js
 import React, { Component } from "react";
+import StreetView from "./StreetView";
+import { LoadScript } from "@react-google-maps/api";
+import Prompt from "./prompt.js"
 
-const sideMenu = {
-  position: "fixed",
-  width: "100%",
-  height: 700,
-  overflow: "hidden",
-  pointerEvents: "none",
-  zIndex: 25,
-};
-
-const sideMenuOverlay = {
-  position: "absolute",
-  right: 10,
-  display: "block",
-  height: "100%",
-  width: "30%",
-  backgroundColor: "#abdbe3",
-  padding: 10,
-};
-
-function SideMenu({ title, description, suggestions }) {
+function SideMenu({ title, description, suggestions, longitude, latitude }) {
+  const lib = ["places"];
+  const key = "AIzaSyAZgZEKZ6djLHvWI9g5qkQGdDbInfSJ0nE";
   return (
-    
     <div className="ml-4 flex flex-col w-1/4">
       <h1 className="font-lg font-thick mb-5">{title}</h1>
       <p className="underline md:underline-offset-400">
