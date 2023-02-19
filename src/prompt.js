@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 import generate from "./generate";
 
-export function Prompt(props) {
+export function Prompt({ title, setModelOutput }) {
   async function onClick() {
-    const output = await generate(props.place);
-    props.setModelOutput(output);
+    const output = await generate(title);
+    setModelOutput(output);
   }
 
   return (

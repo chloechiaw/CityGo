@@ -20,7 +20,7 @@ export function Header() {
           Transform an Unwalkable SF Street Instantly 🪄
         </h2>
 
-        <p className="mx-3 text-black">
+        <p className="mt-3 mx-3 text-black">
           This is a tool urban planners can use to identify the exact street
           venues where areas are{" "}
           <span class="underline text-indigo-600"> least walkable</span> for

@@ -1,15 +1,16 @@
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
-export default async function generate(location) {
+export default async function generate(title) {
+  console.log(title);
   try {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: generatePrompt(location.Title),
+      prompt: generatePrompt(title),
       temperature: 0.6,
       max_tokens: 256,
     });

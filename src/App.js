@@ -41,7 +41,6 @@ export default function App() {
       <div className=" w-full bg-gray-100 h-16 flex items-center ">
         <Header />
       </div>
-      <p>{modelOutput}</p>
       <div>
         {/* here */}
         <div className="mt-20 w-full grid grid-cols-2 gap-2 p-4">
@@ -58,10 +57,11 @@ export default function App() {
             <SideMenu
               className="w-300 h-64 align"
               title={displaySideMenu.Title}
-              suggestions={displaySideMenu.suggestions}
+              suggestions={modelOutput}
               latitude={displaySideMenu.latitude}
               longitude={displaySideMenu.longitude}
               walkScore={displaySideMenu.walkScore}
+              setModelOutput={setModelOutput}
             ></SideMenu>
           </div>
         </div>
