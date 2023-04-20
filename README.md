@@ -3,6 +3,12 @@
 █▄▄ █ ░█░ ░█░ █▄█ █▄█
 </pre>
 
+
+To get CityGo running... 
+1. Clone the repo 
+2. Add your own OpenAI Key
+3. npm install
+
 🏆 Submitted to Stanford TreeHacks 2023, won "Most Impactful Hack". Check out the DevPost here: https://devpost.com/software/pedestrian-flow-analysis
 
 ### Background
